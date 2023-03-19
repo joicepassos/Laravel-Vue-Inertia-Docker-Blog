@@ -17,3 +17,7 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+appendonly.aof
+Dockerfile
+docker-compose.json
+
