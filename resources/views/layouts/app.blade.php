@@ -27,6 +27,10 @@
                 </header>
             @endif
 
+          
+            {{-- Sidebar --}}
+
+
             <!-- Page Content -->
             <main>
                 {{ $slot }}

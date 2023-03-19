@@ -17,7 +17,14 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-appendonly.aof
 Dockerfile
-docker-compose.json
+docker-compose.yml
+appendonly.aof
+dump.rdb
+/storage/debugbar/
+/storage/framework/
+/storage/logs/
+/redis/
+redis/appendonly.aof
+redis/dump.rdbz
 
