@@ -1,0 +1,45 @@
+version: "3.4"
+services:
+  medicine:
+    container_name: medicine
+    image: medicine-image
+    build: /home/joice/blog/laravel9-blog
+    restart: "unless-stopped"
+    volumes:
+      - /home/joice/blog/laravel9-blog:/var/www/html
+    networks:
+      - ntw_medicine
+      - ntw_mariadb-medicine
+      - ntw_redis-medicine
+    ports:
+      - 8000:80
+
+  mariadb-medicine:
+    container_name: mariadb-medicine
+    image: mariadb:10.6.5-focal
+    restart: always
+    environment:
+      MYSQL_DATABASE: medicine
+      MYSQL_USER: medicine
+      MYSQL_PASSWORD: 'medicine@2021'
+      MYSQL_ROOT_PASSWORD: medicine@@2021
+    networks:
+      - ntw_mariadb-medicine
+    ports:
+      - 3307:3306
+
+  redis-medicine:
+    image: redis:6.2.6-buster
+    container_name: medicine-redis
+    command: redis-server --appendonly yes
+    volumes:
+      - /home/joice/blog/laravel9-blog/redis:/data
+    networks:
+      - ntw_redis-medicine
+    ports:
+      - 25431:6379
+
+networks:
+  ntw_medicine:
+  ntw_mariadb-medicine:
+  ntw_redis-medicine:
