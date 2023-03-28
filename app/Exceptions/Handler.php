@@ -49,5 +49,5 @@ class Handler extends ExceptionHandler
     }
 
 
-    
+
 }

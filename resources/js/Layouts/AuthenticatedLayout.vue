@@ -33,6 +33,15 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
+                                <NavLink :href="route('posts.create')" :active="route().current('posts.create')">
+                                    Posts
+                                </NavLink>
+                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                    Categorias
+                                </NavLink>
+                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                    Tags
+                                </NavLink>
                             </div>
                         </div>
 
@@ -116,7 +125,10 @@ const showingNavigationDropdown = ref(false);
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </ResponsiveNavLink>
+
                     </div>
+
+
 
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
@@ -144,8 +156,8 @@ const showingNavigationDropdown = ref(false);
                 </div>
             </header>
 
-                <Sidebar />
-                
+                <!-- <Sidebar /> -->
+
             <!-- Page Content -->
             <main>
                 <slot />

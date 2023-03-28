@@ -36,10 +36,12 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', function () {
         return inertia('Dashboard');
-    })->name('dashboard');
+    })->middleware(['auth', 'verified'])->name('dashboard');
 
 
     Route::resource('posts', App\Http\Controllers\PostController::class);
+    // Route::get('posts', [App\Http\Controllers\PostController::class, 'index'])->name('posts.index');
+
 
 });
 

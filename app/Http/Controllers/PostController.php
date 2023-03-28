@@ -10,21 +10,23 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return inertia('posts/Index', compact('posts'));
+        return inertia('Posts/Index', compact('posts'));
     }
 
     public function create()
     {
-        return inertia('posts/Create');
+        return inertia('Posts/Create');
     }
 
     public function store(Request $request)
     {
+        
+
         $post = new Post();
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->save();
-        return redirect()->route('posts.index');
+
     }
 
     public function show(Post $post)
